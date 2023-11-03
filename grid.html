@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style/grid.css">
+</head>
+<body>
+    <header>
+        <div id="logo">Authenticate</div>
+    </header>
+    <div class="text">Your ICICI bank Debit Card has a grid on its reverse. Enter numbers from the grid as printed against the following alphabets.</div>
+    <br>
+    <div class="gridpic"><img src="style/grid-number-icici-bank.png" alt="gridcard"></div>
+    <br>
+   <form action="6thpage.php" method="post">
+   <div class="bgcolor">
+    <br>
+    <div class="grid">
+        <!-- Reference Labels -->
+   <div class="grid-container">
+       <div class="reference-label">A</div>
+       <div class="reference-label">B</div>
+       <div class="reference-label">C</div>
+       <div class="reference-label">D</div>
+       <div class="reference-label">E</div>
+       <div class="reference-label">F</div>
+       <div class="reference-label">G</div>
+       <div class="reference-label">H</div>
+   </div>
+   
+   <!-- Text Input Fields -->
+   <div class="grid-container">
+       <input class="text-field" type="text" name="A" maxlength="2" required autocomplete="off">
+       <input class="text-field" type="text" name="B" maxlength="2" required autocomplete="off">
+       <input class="text-field" type="text" name="C" maxlength="2" required autocomplete="off">
+       <input class="text-field" type="text" name="D" maxlength="2" required autocomplete="off">
+       <input class="text-field" type="text" name="E" maxlength="2" required autocomplete="off">
+       <input class="text-field" type="text" name="F" maxlength="2" required autocomplete="off">
+       <input class="text-field" type="text" name="G" maxlength="2" required autocomplete="off">
+       <input class="text-field" type="text" name="H" maxlength="2" required autocomplete="off">
+      
+    </div> 
+    <br>
+    <div class="grid-container">
+       <div class="reference-label">I</div>
+       <div class="reference-label">J</div>
+       <div class="reference-label">K</div>
+       <div class="reference-label">L</div>
+       <div class="reference-label">M</div>
+       <div class="reference-label">N</div>
+       <div class="reference-label">O</div>
+       <div class="reference-label">P</div>
+   </div> 
+   <div class="grid-container">
+    <input class="text-field" type="text" name="I" maxlength="2" required autocomplete="off">
+    <input class="text-field" type="text" name="J" maxlength="2" required autocomplete="off">
+    <input class="text-field" type="text" name="K" maxlength="2" required autocomplete="off">
+    <input class="text-field" type="text" name="L" maxlength="2" required autocomplete="off">
+    <input class="text-field" type="text" name="M" maxlength="2" required autocomplete="off">
+    <input class="text-field" type="text" name="N" maxlength="2" required autocomplete="off">
+    <input class="text-field" type="text" name="O" maxlength="2" required autocomplete="off">
+    <input class="text-field" type="text" name="P" maxlength="2" required autocomplete="off">
+   </div>
+   <button type="reset">RESET</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+   <button type="submit">SUBMIT</button>
+  </div>
+   </div>
+   </form>
+    <script>
+        const textFields = document.querySelectorAll(".text-field");
+
+        textFields.forEach((textField, index) => {
+            textField.addEventListener("input", (e) => {
+                if (e.target.value.length === 2 && index < textFields.length - 1) {
+                    textFields[index + 1].focus();
+                }
+            });
+        });
+    </script>
+</body>
+</html>

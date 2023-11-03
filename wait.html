@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>User Feedback Form</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+        form {
+            margin: 0 auto;
+            width: 300px;
+        }
+        input[type="text"], textarea {
+            width: 100%;
+            padding: 10px;
+            margin: 5px 0;
+            box-sizing: border-box;
+        }
+        input[type="submit"] {
+            background-color: #007BFF;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+        }
+        input[type="submit"]:hover {
+            background-color: #0056b3;
+        }
+    </style>
+    <script>
+        function submitFeedbackForm() {
+            document.getElementById("feedback-form").style.display = "none";
+            document.getElementById("loading-message").style.display = "block";
+            setTimeout(function () {
+                document.getElementById("loading-message").style.display = "none";
+                document.getElementById("thank-you-message").style.display = "block";
+            }, 10000); // 10 seconds
+        }
+    </script>
+</head>
+<body>
+    <h1>User Feedback Form</h1>
+    <form id="feedback-form">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required><br>
+        <label for="email">Email:</label>
+        <input type="text" id="email" name="email" required><br>
+        <label for="feedback">Feedback:</label>
+        <textarea id="feedback" name="feedback" rows="4" required></textarea><br>
+        <input type="submit" value="Submit" onclick="submitFeedbackForm()">
+    </form>
+
+    <div id="loading-message" style="display: none;">
+        <p>Submitting your feedback. Please wait...</p>
+    </div>
+
+    <div id="thank-you-message" style="display: none;">
+        <p>Thank you for your feedback!</p>
+    </div>
+</body>
+</html>
